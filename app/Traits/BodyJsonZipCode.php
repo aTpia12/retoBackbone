@@ -25,7 +25,7 @@ trait BodyJsonZipCode{
             $sep = explode("|", $num);
             $row = array(
                 "key" => $sep[12],
-                "name" => utf8_encode($sep[1]),
+                "name" => strtoupper(utf8_encode($sep[1])),
                 "zone_type" => strtoupper($sep[13]),
                 "settlement_type" => array(
                     "name" => utf8_encode($sep[2])
