@@ -26,7 +26,7 @@ trait BodyJsonZipCode{
             $row = array(
                 "key" => $sep[12],
                 "name" => utf8_encode($sep[1]),
-                "zone_type" => $sep[14],
+                "zone_type" => strtoupper($sep[13]),
                 "settlement_type" => array(
                     "name" => utf8_encode($sep[2])
                 ),
@@ -42,10 +42,10 @@ trait BodyJsonZipCode{
         //Genera cabecera y adjunta cuerpo de datos
         $arrayJson = [
             "zip_code" => $divide[0],
-            "locality" => utf8_encode($divide[3]),
+            "locality" => strtoupper(utf8_encode($divide[3])),
             "federal_entity" => [
                 "key" => $divide[7],
-                "name" => utf8_encode($divide[4]),
+                "name" => strtoupper(utf8_encode($divide[4])),
                 "code" => null
             ],
             "settlements" => $data
